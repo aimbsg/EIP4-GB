@@ -1,0 +1,27 @@
+
+Session 1 - Test accuracy : 0.99
+
+1. Convolution :
+Process of reducing the image into smaller size by picking up the edges and gradients. Convolution is similar to correlation.
+
+2. Filters/Kernels :
+A channel is a container of very specific information(Ex : character 'g' in a wordcloud). The way how the specific information is extracted by network is called filter/kernel/feature extractor i.e channel is the output of filter.
+
+3. Epoch :
+It is the number of times a network "completely" goes through the dateset. Ex. : If a network goes through all the images in the dataset once then epoch=1
+
+4. 1x1 convolution :
+1x1 convolution on the input layer gives 1x1 output. This can be better explained while considering a channel of size 2 or more where 1x1 matrix is each channel gets convolued to give 1x1 output of the loudest channel.
+
+5. 3x3 convolution :
+3x3 convolution is dotproduct matrix multiplication to pick the required edges and gradient of interest from the dataset.In every 3x3 convolution 2x2 pixels are reduced. 
+Ex : Input size : 300x300 | 3x3 | 298x298 - Output
+
+6. Feature Maps :
+Collection of all the features extracted by a kernel is feature map.
+
+7. Activation function :
+Activation function assigns the weights and biases and makes the back-propogation possible. (This is assumptive answer as Rohan mentioned "relu" activation and its uses will be covered in session 2)
+
+8. Receptive field :
+Receptive field is how many pixels of the image seen by the network at the end of every convolution. Ex. : Input size : 300x300 | 3x3 | 3x3(Receptive field)
