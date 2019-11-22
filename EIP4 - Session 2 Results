@@ -1,0 +1,87 @@
+
+Validation accuracy - 99.42% (Epoch 17)
+Total params: 14,060
+Total epochs : 20
+
+1. Model log
+
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:4: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(16, (3, 3), activation="relu", input_shape=(28, 28, 1...)`
+  after removing the cwd from sys.path.
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:8: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(16, (3, 3), activation="relu")`
+  
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:12: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(10, (1, 1), activation="relu")`
+  if sys.path[0] == '':
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:16: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(16, (3, 3), activation="relu")`
+  app.launch_new_instance()
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:21: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(16, (3, 3), activation="relu")`
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:26: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(16, (3, 3), activation="relu")`
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:31: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(16, (3, 3), activation="relu")`
+/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:36: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(10, (4, 4))`
+Model: "sequential_4"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_25 (Conv2D)           (None, 26, 26, 16)        160       
+_________________________________________________________________
+batch_normalization_22 (Batc (None, 26, 26, 16)        64        
+_________________________________________________________________
+dropout_22 (Dropout)         (None, 26, 26, 16)        0         
+_________________________________________________________________
+conv2d_26 (Conv2D)           (None, 24, 24, 16)        2320      
+_________________________________________________________________
+batch_normalization_23 (Batc (None, 24, 24, 16)        64        
+_________________________________________________________________
+dropout_23 (Dropout)         (None, 24, 24, 16)        0         
+_________________________________________________________________
+conv2d_27 (Conv2D)           (None, 24, 24, 10)        170       
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 12, 12, 10)        0         
+_________________________________________________________________
+conv2d_28 (Conv2D)           (None, 10, 10, 16)        1456      
+_________________________________________________________________
+batch_normalization_24 (Batc (None, 10, 10, 16)        64        
+_________________________________________________________________
+dropout_24 (Dropout)         (None, 10, 10, 16)        0         
+_________________________________________________________________
+conv2d_29 (Conv2D)           (None, 8, 8, 16)          2320      
+_________________________________________________________________
+batch_normalization_25 (Batc (None, 8, 8, 16)          64        
+_________________________________________________________________
+dropout_25 (Dropout)         (None, 8, 8, 16)          0         
+_________________________________________________________________
+conv2d_30 (Conv2D)           (None, 6, 6, 16)          2320      
+_________________________________________________________________
+batch_normalization_26 (Batc (None, 6, 6, 16)          64        
+_________________________________________________________________
+dropout_26 (Dropout)         (None, 6, 6, 16)          0         
+_________________________________________________________________
+conv2d_31 (Conv2D)           (None, 4, 4, 16)          2320      
+_________________________________________________________________
+batch_normalization_27 (Batc (None, 4, 4, 16)          64        
+_________________________________________________________________
+dropout_27 (Dropout)         (None, 4, 4, 16)          0         
+_________________________________________________________________
+conv2d_32 (Conv2D)           (None, 1, 1, 10)          2570      
+_________________________________________________________________
+batch_normalization_28 (Batc (None, 1, 1, 10)          40        
+_________________________________________________________________
+dropout_28 (Dropout)         (None, 1, 1, 10)          0         
+_________________________________________________________________
+flatten_4 (Flatten)          (None, 10)                0         
+_________________________________________________________________
+activation_4 (Activation)    (None, 10)                0         
+=================================================================
+Total params: 14,060
+Trainable params: 13,848
+Non-trainable params: 212
+
+
+2. score = model.evaluate(X_test, Y_test, verbose=0)
+print(score)
+
+[0.021295674181287177, 0.994]
+
+
+3. Approach :
+Reducing parameters : Have consistently used 16 filters across all the convolution layers
+Increasing accuracy : Have reduced the dropout value to 0.05 instead of 0.1 from your 8th CNN
